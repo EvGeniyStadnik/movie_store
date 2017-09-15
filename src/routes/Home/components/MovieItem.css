@@ -1,0 +1,13 @@
+.movieItem {
+  margin: 8px;
+  width: 185px;
+}
+
+.movieItemTitle {
+  color: white;
+  text-transform: uppercase;
+}
+
+.movieItemGenre {
+  color: #979797;
+}

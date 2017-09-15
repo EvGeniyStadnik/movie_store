@@ -1,0 +1,6 @@
+.moviesWrapper {
+  width: 805px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #353535;
+}

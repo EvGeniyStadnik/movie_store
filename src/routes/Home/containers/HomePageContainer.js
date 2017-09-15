@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
-import SearchGidAPI from '../../../api';
+import axios from 'axios';
+import SearchMovieAPI from '../../../api';
 import MoviesGrid from '../components/MoviesGrid';
+import { moviesGridWrapper } from './HomePageContainer.css';
 
 class HomePageContainer extends Component {
   state = {
-    movies: []
+    movies: [],
+    genres: []
   };
 
-  componentWillMount(){
-    SearchGidAPI.getGridMovies().then(movies => {
-      console.log(movies);
-      this.setState({ movies });
-    });
+  componentDidMount() {
+    SearchMovieAPI.getGridMovies()
+      .then(
+        axios.spread((movies, genres) => {
+          let data = Object.assign({}, movies.data, genres.data);
+          this.setState({
+            movies: data.results,
+            genres: data.genres
+          });
+        })
+      )
+      .catch(err => console.log(err));
   }
 
   render() {
-    const movies = this.state.movies;
+    const { movies, genres } = this.state;
     return (
-      <div>
-        <MoviesGrid movies={movies} />
+      <div className={moviesGridWrapper}>
+        <MoviesGrid movies={movies} genres={genres} />
       </div>
     );
   }

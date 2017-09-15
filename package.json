@@ -1,9 +1,10 @@
 {
-  "name": "movie store",
+  "name": "movie_store",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "autoprefixer": "7.1.2",
+    "axios": "^0.16.2",
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
     "babel-jest": "20.0.3",
@@ -48,6 +49,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.1.2",
     "react-router-redux": "^4.0.8",
+    "react-star-rating": "^1.4.2",
     "react-tap-event-plugin": "^2.0.1",
     "react-toolbox": "^2.0.0-beta.12",
     "react-toolbox-themr": "^1.0.2",
